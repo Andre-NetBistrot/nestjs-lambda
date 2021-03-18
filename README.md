@@ -11,5 +11,17 @@ Yes, I started trying with serverless but after a few drawbacks I decided a pers
 
 I am using yarn. 
 
-When you run [yarn run build] nest creates a [dist] folder intended for deployment.
+When you run **yarn run build** nest creates a **dist** folder intended for deployment.
+
+When I want to deploy to lambda, first of all, I run the script
+
+##make-distribution.sh
+
+This is what happen:
+
+- the script runs **yarn run build**
+- copy the **dist** folder to **distribution**
+- 
+
+
 
