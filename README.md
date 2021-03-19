@@ -37,9 +37,9 @@ This is what happen:
 - copy the **.env.production** as **.env**
 - make a zip from the **distribution** folder
 
-The resulting **distribution.zip** is ready to be deployed in the aws Lambda with two main advantages
+The resulting **distribution.zip** is ready to be deployed in the aws Lambda with two main advantages.
 
-- I have two diferents **.env** files one for local and another for production. In this example, as the nestjs is intended as an API for a website the .env that runs locally has:
+I have two diferents **.env** files one for local and another for production. In this example, as the nestjs is intended as an API for a website the .env that runs locally has:
 
     SITE_URL=http://localhost:8000
     
@@ -48,7 +48,8 @@ and the .env.prodution that will be deployed in the aws Lambda has:
     SITE_URL=https://example.com
     
 This solves procedure solves the CORS issue.
-- it helps to manage different OS modules from local to production environment.
+
+It helps to manage different OS modules from local to production environment.
 
 Time to deploy.
 
