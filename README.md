@@ -25,7 +25,17 @@ This is what happen:
   - gets the original **package.json**
   - removes the **devDependencies** information
   - saves a **dist-package.json** file
-- move the **dist-package.json** to **distribution** folder
+- move the **dist-package.json** to **distribution** folder as **package.json**
+- goes inseide the **distribution** folder
+- runs **yarn install** to gather all the dependencies in this new folder
+- remove **package.json** and **yarn.lock** files that are not necessary in the Lambda environment
+- remove the **bcrypt** module that works in my machine (macos) but will not work in the Linux environment of the Lambda
+- remove the **aws-sdk** module that is preconfigured in Lambda
+- copy the **bcrypt-linux** module as **bcrypt** inside the new **node-modules** folder
+- copy the **.env.production** as **.env**
+- make a zip from the **distribution** folder
+
+The resulting **distribution.zip** is ready to be deployed in the aws Lambda.
 
 
 
