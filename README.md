@@ -35,7 +35,10 @@ This is what happen:
 - copy the **.env.production** as **.env**
 - make a zip from the **distribution** folder
 
-The resulting **distribution.zip** is ready to be deployed in the aws Lambda.
+The resulting **distribution.zip** is ready to be deployed in the aws Lambda with two main advantages
+
+- I have two diferents **.env** files one for local and another for production. In this example 
+- it helps to manage different OS modules from local to production environment.
 
 
 
