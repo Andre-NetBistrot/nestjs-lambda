@@ -1,7 +1,7 @@
 # nestjs-lambda
-Nestjs setup for local development and easy deploy to AWS lambda.
+Nestjs setup for local development and easy deploy to AWS Lambda.
 
-After a little while using nest and deploying to the AWS lambda I have developed a few scripts In order to make easy to write and test code locally and send it to a preconfigured Lambda.
+After a little while using nest and deploying to the AWS Lambda I have developed a few scripts In order to make easy to write and test code locally and send it to a preconfigured Lambda.
 
 You will need **nodejs** and **aws cli** installed in your machine and a Lambda function already created.
 
@@ -15,7 +15,7 @@ I am using yarn.
 
 When you run **yarn run build** nest creates a **dist** folder intended for deployment.
 
-When I want to deploy to lambda, first of all, I run the script
+When I want to deploy to Lambda, first of all, I run the script
 
 #### make-distribution.sh
 
