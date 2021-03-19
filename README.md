@@ -15,7 +15,7 @@ When you run **yarn run build** nest creates a **dist** folder intended for depl
 
 When I want to deploy to lambda, first of all, I run the script
 
-##make-distribution.sh
+## make-distribution.sh
 
 This is what happen:
 
