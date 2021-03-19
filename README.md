@@ -15,16 +15,16 @@ When you run **yarn run build** nest creates a **dist** folder intended for depl
 
 When I want to deploy to lambda, first of all, I run the script
 
-## make-distribution.sh
+#### make-distribution.sh
 
 This is what happen:
 
 - the script runs **yarn run build**
 - copy the **dist** folder to **distribution**
 - runs **node get-dist-package.js** that make a few things:
-- - gets the original **package.json**
-- - removes the **devDependencies** information
-- - saves a **dist-package.json** file
+  - gets the original **package.json**
+  - removes the **devDependencies** information
+  - saves a **dist-package.json** file
 - move the **dist-package.json** to **distribution** folder
 
 
