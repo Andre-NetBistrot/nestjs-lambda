@@ -3,6 +3,8 @@ Nestjs setup for local development and easy deploy to AWS lambda
 
 After a little while using nest and deploying to the AWS lambda I have developed a few scripts In order to make easy to write and test code locally and send it to a preconfigured Lambda.
 
+You will need **nodejs** and **aws cli** installed in your machine.
+
 This repository contains a full nest installation, a few shell scripts and a small nodejs code. Please note that in the src folder there are main.ts file that comes with nest and also a index.ts that will be deployed in the lambda function. I did not write the last one it comes from here:
 
 <a href="https://blog.theodo.com/2019/06/deploy-a-nestjs-app-in-5-minutes-with-serverless-framework/" target="blank">Deploy a NestJS App with Serverless Framework</a>
@@ -37,8 +39,24 @@ This is what happen:
 
 The resulting **distribution.zip** is ready to be deployed in the aws Lambda with two main advantages
 
-- I have two diferents **.env** files one for local and another for production. In this example 
+- I have two diferents **.env** files one for local and another for production. In this example, as the nestjs is intended as an API for a website the .env that runs locally has:
+    SITE_URL=http://localhost:8000
+and the .env.prodution that will be deployed in the aws Lambda has:
+    SITE_URL=https://example.com
+This solves procedure solves the CORS issue.
 - it helps to manage different OS modules from local to production environment.
 
+Time to deploy.
+
+#### dist-deploy.sh
+
+This file is just a aws cli command to upload the **distribution.zip** to your Lambda function but come to hand when you are in a hurry.
+You first need to create a Lambda function and replace the **my-lambda-function-name** by the name of your function. If you do not use aws cli profiles you should remove **--profile myprofile**.
+
+Changing the code.
+
+#### dist-update.sh
+
+Use this script whenever you change your code without adding new modules. It will update the **distribution** folder and the **distribution.zip** making ready for a new deployment.
 
 
