@@ -28,7 +28,7 @@ This is what happens:
   - removes the **devDependencies** information
   - saves a **dist-package.json** file
 - move the **dist-package.json** to **distribution** folder as **package.json**
-- goes inseide the **distribution** folder
+- goes inside the **distribution** folder
 - runs **yarn install** to gather all the dependencies in this new folder
 - remove **package.json** and **yarn.lock** files that are not necessary in the Lambda environment
 - remove the **bcrypt** module that works in my machine (macos) but will not work in the Linux environment of the Lambda
@@ -39,7 +39,7 @@ This is what happens:
 
 The resulting **distribution.zip** is ready to be deployed in the aws Lambda with two main advantages.
 
-I have two diferents **.env** files one for local and another for production. In this example, as the nestjs is intended as an API for a website the .env that runs locally has:
+I have two diferents **.env** files, one for local and another for production. In this example, as the nestjs is intended as an API for a website the .env that runs locally has:
 
     SITE_URL=http://localhost:8000
     
