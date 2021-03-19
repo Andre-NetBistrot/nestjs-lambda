@@ -43,11 +43,11 @@ I have two diferents **.env** files, one for local and another for production. I
 
     SITE_URL=http://localhost:8000
     
-and the .env.prodution that will be deployed in the aws Lambda has:
+and the .env.production that will be deployed in the aws Lambda has:
 
     SITE_URL=https://example.com
     
-This solves procedure solves the CORS issue.
+This procedure solves the CORS issue.
 
 It helps to manage different OS modules from local to production environment.
 
