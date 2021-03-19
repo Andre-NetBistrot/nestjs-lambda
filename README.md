@@ -3,7 +3,7 @@ Nestjs setup for local development and easy deploy to AWS lambda
 
 After a little while using nest and deploying to the AWS lambda I have developed a few scripts In order to make easy to write and test code locally and send it to a preconfigured Lambda.
 
-You will need **nodejs** and **aws cli** installed in your machine.
+You will need **nodejs** and **aws cli** installed in your machine and a Lambda function already created.
 
 This repository contains a full nest installation, a few shell scripts and a small nodejs code. Please note that in the src folder there are main.ts file that comes with nest and also a index.ts that will be deployed in the lambda function. I did not write the last one it comes from here:
 
@@ -40,9 +40,13 @@ This is what happen:
 The resulting **distribution.zip** is ready to be deployed in the aws Lambda with two main advantages
 
 - I have two diferents **.env** files one for local and another for production. In this example, as the nestjs is intended as an API for a website the .env that runs locally has:
+
     SITE_URL=http://localhost:8000
+    
 and the .env.prodution that will be deployed in the aws Lambda has:
+
     SITE_URL=https://example.com
+    
 This solves procedure solves the CORS issue.
 - it helps to manage different OS modules from local to production environment.
 
@@ -57,6 +61,19 @@ Changing the code.
 
 #### dist-update.sh
 
-Use this script whenever you change your code without adding new modules. It will update the **distribution** folder and the **distribution.zip** making ready for a new deployment.
+Use this script whenever you change your code without adding new modules.
+
+It will perform the following operations:
+
+- runs **yarn run build**
+- copy the files from **dist** folder to **distribution**
+- copy the **.env.production** as **.env**
+- make a new zip from the **distribution** folder
+
+It will update the **distribution** folder and the **distribution.zip** making ready for a new deployment.
+
+That's it.
+
+I hope that you enjoy.
 
 
